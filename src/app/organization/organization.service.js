@@ -10,7 +10,7 @@
       this.repos = function(id) {
         return $http({
           method: 'GET',
-          url: 'http://api.github.com/orgs/' +id + '/repos'
+          url: 'https://api.github.com/orgs/' +id + '/repos'
         });
       }
   }

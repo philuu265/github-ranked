@@ -10,7 +10,7 @@
       this.commits = function(owner, repo) {
          return $http({
            method: 'GET',
-           url: 'http://api.github.com/repos/'+ owner + '/' + repo + '/commits'
+           url: 'https://api.github.com/repos/'+ owner + '/' + repo + '/commits'
          });
       }
   }
