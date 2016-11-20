@@ -10,13 +10,15 @@
 <div class="col-md-8">
   <div class="row">
     <div class="col-sm-6 col-md-12" ng-repeat="commit in commit.commits | orderBy:'-commit.committer.date'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <p><a ng-if="commit.author.avatar_url" ng-href="{{ commit.author.html_url }}" target="_blank" title="{{ commit.commit.author.name }}"><img class="pull-right" ng-src="{{ commit.author.avatar_url }}" alt="{{ commit.commit.author.name }}"/></a> <strong>{{ commit.commit.message }} </strong>
+      <div class="thumbnail" style="height: auto;text-align:justify; padding:20px">
+          <p>
+            <strong>{{ commit.commit.message }} </strong>
           </p>
-          <span class="small">by {{ commit.commit.author.name }} {{ commit.commit.committer.date | date: 'medium' }}</span>
-        </div>
+          <span class="small">by
+            <a ng-if="commit.author.avatar_url" ng-href="{{ commit.author.html_url }}" target="_blank" title="{{ commit.commit.author.name }}">
+                <img width=30 style="display:inline" ng-src="{{ commit.author.avatar_url }}" alt="{{ commit.commit.author.name }}"/>
+            </a>
+            {{ commit.commit.author.name }} {{ commit.commit.committer.date | date: 'medium' }}</span>
       </div>
     </div>
   </div>
