@@ -1,9 +1,9 @@
 <div class="col-md-4">
   <div class="row">
     <div class="col-sm-6 col-md-12">
-      <div class="thumbnail">
-        <h1>{{ main.organization.login }}</h1>
+      <center class="thumbnail">
         <img width=100px ng-src="{{ main.organization.avatar_url }}" alt="{{ main.organization.login }}">
+        <h1>{{ main.organization.login }}</h1>
       </div>
     </div>
   </div>
@@ -11,14 +11,12 @@
 <div class="col-md-8">
   <div class="row">
     <div class="col-sm-6 col-md-12" ng-repeat="repo in main.repos | orderBy:'-forks_count'">
-      <div class="thumbnail">
-        <div class="caption">
+      <div class="thumbnail" style="text-align:justify; padding:10px; height: auto">
           <h3><a ui-sref="commits({org: main.org, repo: repo.name})">{{ repo.name }}</a></h3>
           <p>{{ repo.description }}</p>
           <p>
             <span><span class="label label-success">{{ repo.language }}</span> <span class="label label-default">forks: {{ repo.forks_count }}</span></span></span>
           </p>
-        </div>
       </div>
     </div>
   </div>

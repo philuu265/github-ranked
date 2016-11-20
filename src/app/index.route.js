@@ -9,19 +9,19 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('organization', {
-        url: '/',
+        url: '/github-ranked',
         templateUrl: 'app/organization/organization.html',
         controller: 'OrganizationController',
         controllerAs: 'main'
       })
       .state('commits', {
-        url: '/:org/:repo/commits',
+        url: '/github-ranked/:org/:repo/commits',
         templateUrl: 'app/commit/commit.html',
         controller: 'CommitController',
         controllerAs: 'commit'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/github-ranked');
   }
 
 })();
